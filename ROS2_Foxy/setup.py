@@ -20,7 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'fairui_tal = fair_drip.Ros2_Talker_UI:main',
             'fair_lis = fair_drip.Ros2_Listener_Robot:main'
         ],
     },

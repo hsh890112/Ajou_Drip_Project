@@ -41,7 +41,6 @@ def newSPIRAL(J1, SPEED, Pa, DP):
     while True:
         motion_state = robot.GetRobotMotionDone()
         if motion_state[1] == 1:
-            # print("SPIRAL 동작 완료")
             break
         # print("스파이럴 대기")
         time.sleep(0.1)
@@ -49,9 +48,9 @@ def newSPIRAL(J1, SPEED, Pa, DP):
 def movegripper(index, pos, vel, force, max_time, last_arg=0):
     robot.MoveGripper(index, pos, vel, force, max_time, last_arg)
     start_time = time.time()
-    while time.time() - start_time < 1.0:  # 1초 동안 대기
+    while time.time() - start_time < 1.0:  
         gripper_state = robot.GetGripperMotionDone()
-        if gripper_state[2] == 1:  # 그리퍼 동작이 완료되었으면
+        if gripper_state[2] == 1:  
             break
         print("Gripper 동작 대기 중...")
         time.sleep(0.1)
